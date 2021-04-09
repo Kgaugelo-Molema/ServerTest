@@ -55,6 +55,9 @@ namespace Aris.ServerTest.Models
         [JsonProperty("medal")]
         public KoreMedal Medal { get; set; }
 
+        [JsonProperty("attributes")]
+        public KoreGameAttributes Attributes { get; set; }
+
         public string PlayGameLink
         {
             get
