@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Aris.ServerTest.Filters;
+using MoreLinq;
 
 namespace Aris.ServerTest.Controllers
 {
@@ -24,6 +25,7 @@ namespace Aris.ServerTest.Controllers
             var games = await _gameService.GetGamesAsync(GetAuthToken(), returnUrl);
 
             viewModel.Games = games;
+            viewModel.Categories = games.Select(g => g.Category).DistinctBy(c => c);
 
             return View(viewModel);
         }

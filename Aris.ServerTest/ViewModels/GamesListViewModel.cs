@@ -8,6 +8,7 @@ namespace Aris.ServerTest.ViewModels
     {
 
         public IEnumerable<Models.KoreGame> Games { get; set; }
+        public IEnumerable<string> Categories { get; set; }
 
     }
 }
